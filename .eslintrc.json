@@ -1,0 +1,27 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "standard",
+    "standard-react",
+    "prettier",
+    "prettier/react",
+    "prettier/standard",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+  "plugins": [
+    "prettier",
+    "standard",
+    "import"
+  ],
+  "env": {
+    "es6": true,
+    "node": true,
+    "jest": true,
+    "browser": true
+  },
+  "rules": {
+    "prettier/prettier": "error",
+    "import/order": "error"
+  }
+}

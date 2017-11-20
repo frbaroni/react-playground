@@ -1,0 +1,34 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+
+.wrapper {
+  .carousel-inner, .carousel-item > img {
+      height: 500px;
+      min-width: 100%;
+      width: 100%;
+      max-width: 100%;
+  }
+
+  .logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 100px;
+    margin-left: 50px;
+  }
+
+  // Mobile devices
+  @include media-breakpoint-down(sm) {
+    .form {
+      width: 400px;
+    }
+  }
+
+  // Tablets/Desktop devices
+  @include media-breakpoint-up(md) {
+    .form {
+      position: absolute;
+      top: 0;
+      margin-top: 200px;
+    }
+  }
+}
