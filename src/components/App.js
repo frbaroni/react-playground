@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Banner from "./Banner";
+import LandingPage from "./LandingPage";
 
 class App extends Component {
   render() {
-    return <Banner />;
+    return <LandingPage />;
   }
 }
 
