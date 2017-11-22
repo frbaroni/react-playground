@@ -1,6 +1,7 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
-class Login extends Component {
+export class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -23,6 +24,17 @@ class Login extends Component {
   onRememberMe = this.update("rememberMe");
   onSubmit = e => {
     console.log("Do Login", this.state);
+  };
+
+  mayRenderError = () => {
+    if (!this.props.error) {
+      return false;
+    }
+    return (
+      <div className="alert alert-danger">
+        <strong>Error!</strong> invalid credentials.
+      </div>
+    );
   };
 
   render() {
@@ -64,10 +76,15 @@ class Login extends Component {
           >
             Login
           </button>
+          {this.mayRenderError()}
         </form>
       </div>
     );
   }
 }
+
+Login.propTypes = {
+  error: PropTypes.bool.isRequired
+};
 
 export default Login;

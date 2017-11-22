@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Banner from "./Banner";
-import Login from "./Login";
+import Login from "./LoginContainer";
 
 class LandingPage extends Component {
   render() {
