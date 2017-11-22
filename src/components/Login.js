@@ -23,7 +23,7 @@ export class Login extends Component {
   onPassword = this.update("password");
   onRememberMe = this.update("rememberMe");
   onSubmit = e => {
-    console.log("Do Login", this.state);
+    this.props.login({ ...this.state });
   };
 
   mayRenderError = () => {
@@ -84,7 +84,8 @@ export class Login extends Component {
 }
 
 Login.propTypes = {
-  error: PropTypes.bool.isRequired
+  error: PropTypes.bool.isRequired,
+  login: PropTypes.func.isRequired
 };
 
 export default Login;
