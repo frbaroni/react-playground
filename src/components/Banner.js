@@ -13,11 +13,11 @@ class Banner extends Component {
   }
 
   onEntering = (node, isAppearing) => {
-    console.log("Enter", node);
+    // console.log("Enter", node);
   };
 
   onExited = node => {
-    console.log("Exit", node);
+    // console.log("Exit", node);
   };
 
   next = () => {

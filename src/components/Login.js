@@ -3,17 +3,25 @@ import React, { Component } from "react";
 class Login extends Component {
   constructor(props) {
     super(props);
-    this.setState({
+    this.state = {
       email: null,
       password: null,
-      rememberMe: null
-    });
+      rememberMe: false
+    };
   }
 
-  onEmail = email => this.setState({ email });
-  onPassword = password => this.setState({ password });
-  onRememberMe = rememberMe => this.setState({ rememberMe });
-  onSubmit = () => {
+  update = name => {
+    return e => {
+      const t = e.target;
+      this.setState({
+        [name]: t.type === "checkbox" ? t.checked : t.value
+      });
+    };
+  };
+  onEmail = this.update("email");
+  onPassword = this.update("password");
+  onRememberMe = this.update("rememberMe");
+  onSubmit = e => {
     console.log("Do Login", this.state);
   };
 
@@ -50,9 +58,9 @@ class Login extends Component {
             </label>
           </div>
           <button
-            type="submit"
+            type="button"
             className="btn btn-primary"
-            onSubmit={this.onSubmit}
+            onClick={this.onSubmit}
           >
             Login
           </button>
