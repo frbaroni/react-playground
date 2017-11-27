@@ -26,39 +26,46 @@ export class Login extends Component {
     this.props.login({ ...this.state });
   };
 
-  mayRenderError = () => {
-    if (!this.props.error) {
-      return false;
-    }
+  renderError = () => {
     return (
-      <div className="alert alert-danger">
-        <strong>Error!</strong> invalid credentials.
-      </div>
+      this.props.error && (
+        <div className="alert alert-danger">
+          <strong>Error!</strong> invalid credentials.
+        </div>
+      )
     );
   };
+
+  renderSuccess = () => {
+    return (
+      this.props.success && (
+        <div className="alert alert-success">
+          <strong>Success!</strong> you're being redirected.
+        </div>
+      )
+    );
+  };
+
+  renderInput = (type, caption, onChange) => (
+    <div className="form-group">
+      <label>
+        {caption}
+        <input
+          type={type}
+          className="form-control"
+          placeholder={caption}
+          onChange={onChange}
+        />
+      </label>
+    </div>
+  );
 
   render() {
     return (
       <div className="form col-md-6 offset-md-3 col-sm-12 push-sm-12">
         <form>
-          <div className="form-group">
-            <label htmlFor="exampleInputEmail1">Email address</label>
-            <input
-              type="email"
-              className="form-control"
-              placeholder="Enter email"
-              onChange={this.onEmail}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="exampleInputPassword1">Password</label>
-            <input
-              type="password"
-              className="form-control"
-              placeholder="Password"
-              onChange={this.onPassword}
-            />
-          </div>
+          {this.renderInput("email", "Email address", this.onEmail)}
+          {this.renderInput("password", "Password", this.onPassword)}
           <div className="form-check">
             <label className="form-check-label">
               <input
@@ -76,7 +83,8 @@ export class Login extends Component {
           >
             Login
           </button>
-          {this.mayRenderError()}
+          {this.renderError()}
+          {this.renderSuccess()}
         </form>
       </div>
     );
@@ -85,6 +93,7 @@ export class Login extends Component {
 
 Login.propTypes = {
   error: PropTypes.bool.isRequired,
+  success: PropTypes.bool.isRequired,
   login: PropTypes.func.isRequired
 };
 

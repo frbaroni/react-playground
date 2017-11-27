@@ -4,7 +4,8 @@ import { Login } from "./Login";
 
 function mapStateToProps(state) {
   return {
-    error: state.auth.error
+    error: state.auth.error,
+    success: state.auth.success
   };
 }
 
