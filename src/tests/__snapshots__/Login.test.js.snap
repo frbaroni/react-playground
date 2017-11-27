@@ -1,0 +1,257 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login component renders pristine 1`] = `
+<div
+  className="form col-md-6 offset-md-3 col-sm-12 push-sm-12"
+>
+  <form>
+    <div
+      className="form-group"
+    >
+      <label>
+        Email address
+        <input
+          className="form-control"
+          onChange={[Function]}
+          placeholder="Email address"
+          type="email"
+        />
+      </label>
+    </div>
+    <div
+      className="form-group"
+    >
+      <label>
+        Password
+        <input
+          className="form-control"
+          onChange={[Function]}
+          placeholder="Password"
+          type="password"
+        />
+      </label>
+    </div>
+    <div
+      className="form-check"
+    >
+      <label
+        className="form-check-label"
+      >
+        <input
+          className="form-check-input"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        Remember me?
+      </label>
+    </div>
+    <button
+      className="btn btn-primary"
+      onClick={[Function]}
+      type="button"
+    >
+      Login
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Login component renders with error 1`] = `
+<div
+  className="form col-md-6 offset-md-3 col-sm-12 push-sm-12"
+>
+  <form>
+    <div
+      className="form-group"
+    >
+      <label>
+        Email address
+        <input
+          className="form-control"
+          onChange={[Function]}
+          placeholder="Email address"
+          type="email"
+        />
+      </label>
+    </div>
+    <div
+      className="form-group"
+    >
+      <label>
+        Password
+        <input
+          className="form-control"
+          onChange={[Function]}
+          placeholder="Password"
+          type="password"
+        />
+      </label>
+    </div>
+    <div
+      className="form-check"
+    >
+      <label
+        className="form-check-label"
+      >
+        <input
+          className="form-check-input"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        Remember me?
+      </label>
+    </div>
+    <button
+      className="btn btn-primary"
+      onClick={[Function]}
+      type="button"
+    >
+      Login
+    </button>
+    <div
+      className="alert alert-danger"
+    >
+      <strong>
+        Error!
+      </strong>
+       invalid credentials.
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Login component renders with success 1`] = `
+<div
+  className="form col-md-6 offset-md-3 col-sm-12 push-sm-12"
+>
+  <form>
+    <div
+      className="form-group"
+    >
+      <label>
+        Email address
+        <input
+          className="form-control"
+          onChange={[Function]}
+          placeholder="Email address"
+          type="email"
+        />
+      </label>
+    </div>
+    <div
+      className="form-group"
+    >
+      <label>
+        Password
+        <input
+          className="form-control"
+          onChange={[Function]}
+          placeholder="Password"
+          type="password"
+        />
+      </label>
+    </div>
+    <div
+      className="form-check"
+    >
+      <label
+        className="form-check-label"
+      >
+        <input
+          className="form-check-input"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        Remember me?
+      </label>
+    </div>
+    <button
+      className="btn btn-primary"
+      onClick={[Function]}
+      type="button"
+    >
+      Login
+    </button>
+    <div
+      className="alert alert-success"
+    >
+      <strong>
+        Success!
+      </strong>
+       you're being redirected.
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Login component renders with success and error 1`] = `
+<div
+  className="form col-md-6 offset-md-3 col-sm-12 push-sm-12"
+>
+  <form>
+    <div
+      className="form-group"
+    >
+      <label>
+        Email address
+        <input
+          className="form-control"
+          onChange={[Function]}
+          placeholder="Email address"
+          type="email"
+        />
+      </label>
+    </div>
+    <div
+      className="form-group"
+    >
+      <label>
+        Password
+        <input
+          className="form-control"
+          onChange={[Function]}
+          placeholder="Password"
+          type="password"
+        />
+      </label>
+    </div>
+    <div
+      className="form-check"
+    >
+      <label
+        className="form-check-label"
+      >
+        <input
+          className="form-check-input"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        Remember me?
+      </label>
+    </div>
+    <button
+      className="btn btn-primary"
+      onClick={[Function]}
+      type="button"
+    >
+      Login
+    </button>
+    <div
+      className="alert alert-danger"
+    >
+      <strong>
+        Error!
+      </strong>
+       invalid credentials.
+    </div>
+    <div
+      className="alert alert-success"
+    >
+      <strong>
+        Success!
+      </strong>
+       you're being redirected.
+    </div>
+  </form>
+</div>
+`;
