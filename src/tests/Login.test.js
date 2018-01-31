@@ -35,6 +35,10 @@ describe("Login component", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it("test fail", () => {
+    expect(1).toBe(2);
+  });
+
   it("renders with success and error", () => {
     const props = {
       ...defaultProps,
