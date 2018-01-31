@@ -22,12 +22,13 @@ node {
     sh "./node_modules/eslint/bin/eslint.js -c .eslintrc.json -f checkstyle src/**/*.js > eslint.checkstyle.xml || true"
       checkstyle canComputeNew: false, canRunOnFailed: true, defaultEncoding: '', healthy: '', pattern: 'eslint.checkstyle.xml', unHealthy: ''
   }
+  
+  stage('Test') {
+    sh "npm run test:ci || true"
+    junit 'test/junit.xml'
+  }
 
   stage('Build') {
     sh "npm run build"
-  }
-
-  stage('Archive') {
-    archiveArtifacts artifacts: 'build/**/*', onlyIfSuccessful: true
   }
 }
