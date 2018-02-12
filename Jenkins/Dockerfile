@@ -4,10 +4,26 @@ USER root
 # Update
 RUN apt-get update
 
-# Install Node
-RUN curl -sL https://deb.nodesource.com/setup_9.x | bash -
-RUN apt-get install -y nodejs
-RUN npm install --global eslint
+# Install dependencies
+RUN apt-get install -y \
+     sudo \
+     apt-transport-https \
+     ca-certificates \
+     curl \
+     gnupg2 \
+     software-properties-common
+
+# Add Jenkins to SUDO
+RUN echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers
+
+# Install Docker
+RUN curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg | apt-key add -
+RUN apt-key fingerprint 0EBFCD88
+RUN add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/$(. /etc/os-release; echo "$ID") \
+   $(lsb_release -cs) \
+   stable"
+RUN apt-get update && apt-get install -y docker-ce
 
 # Drop back to the regular jenkins user - good practice
 USER jenkins
