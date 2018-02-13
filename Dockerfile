@@ -1,12 +1,7 @@
-FROM jenkins/jenkins
-USER root
+FROM node:8-alpine
 
-# Update
-RUN apt-get update
+WORKDIR /var/app
+COPY ./build .
+RUN npm install --global serve
 
-# Install Node
-RUN curl -sL https://deb.nodesource.com/setup_9.x | bash -
-RUN apt-get install -y nodejs
-
-# Drop back to the regular jenkins user - good practice
-USER jenkins
+CMD serve

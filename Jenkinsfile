@@ -1,4 +1,6 @@
 pipeline {
+  def image
+
   agent {
     docker image: 'node:8-alpine'
   }
@@ -40,6 +42,13 @@ pipeline {
     stage('Build') {
       steps {
         sh "npm run build"
+      }
+    }
+
+    stage('Dockerize') {
+      docker.withRegistry('http://localhost:8082') {
+        image = docker.build()
+        image.push
       }
     }
   }
