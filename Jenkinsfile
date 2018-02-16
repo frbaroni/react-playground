@@ -41,7 +41,7 @@ node {
   }
 
   stage('Dockerize') {
-    docker.withRegistry('localhost:8082') {
+    docker.withRegistry('127.0.0.1:8082') {
       dir('build') {
         def prod = docker.build('frontend')
           prod.tag('{BUILD_ID}')
