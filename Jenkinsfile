@@ -13,7 +13,7 @@ node {
 
   stage('Checkstyle') {
     builder.inside {
-      sh "npm run eslint:ci"
+      sh "npm run eslint:ci || true"
     }
     checkstyle canComputeNew: false, canRunOnFailed: true, defaultEncoding: '', healthy: '', pattern: 'ci/eslint.checkstyle.xml', unHealthy: ''
   }
@@ -40,16 +40,15 @@ node {
     }
   }
 
-  stage('Dockerize') {
-    docker.withRegistry('127.0.0.1:8082') {
+  stage('Dockerize and publish') {
+    docker.withRegistry('http://127.0.0.1:8082') {
       dir('build') {
         def prod = docker.build('frontend')
-          prod.tag('{BUILD_ID}')
+          prod.tag('${BUILD_ID}')
           prod.tag('latest')
-          prod.push('{BUILD_ID}')
+          prod.push('${BUILD_ID}')
           prod.push('latest')
       }
     }
   }
 }
-
