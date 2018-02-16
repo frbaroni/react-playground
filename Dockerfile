@@ -1,7 +1,7 @@
 FROM node:8-alpine
 
 WORKDIR /var/app
-COPY ./build .
+COPY . .
 RUN npm install --global serve
 
 CMD serve
