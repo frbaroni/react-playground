@@ -41,11 +41,9 @@ node {
   }
 
   stage('Dockerize and publish') {
-    docker.withRegistry('http://127.0.0.1:8082') {
+    docker.withRegistry('http://127.0.0.1:8086') {
       dir('build') {
         def prod = docker.build('frontend')
-          prod.tag('${BUILD_ID}')
-          prod.tag('latest')
           prod.push('${BUILD_ID}')
           prod.push('latest')
       }
