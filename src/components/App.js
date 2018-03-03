@@ -17,6 +17,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <LandingPage />
+        Hello World, {process.env.REACT_APP_MESSAGE}
       </Provider>
     );
   }
